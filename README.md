@@ -9,4 +9,3 @@ linux driver
 修改 SSH keys 为空密码
 配置、使用gerrit
 测试 gerrit
-测试 gerrit ，发现每次上库必须要有 Change-ID
