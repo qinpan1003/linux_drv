@@ -8,3 +8,4 @@ linux driver
 修改上库名字、邮箱
 修改 SSH keys 为空密码
 配置、使用gerrit
+测试 gerrit
