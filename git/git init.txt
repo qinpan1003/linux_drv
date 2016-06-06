@@ -1,0 +1,45 @@
+#-----------------github init
+git init\n
+git config color.ui true\n
+git config --global user.name "QinPan"\n
+git config --global user.email "qinpan1003@qq.com"\n
+git remote add github git@github.com:qinpan1003/linux_drv.git\n
+git pull github master:master\n
+
+#-----------------gerrit init
+git init\n
+git config color.ui true\n
+git config --global user.name "QinPan"\n
+git config --global user.email "qinpan1003@qq.com"\n
+git remote add gerrit ha:test/project-qinpan.git\n
+git pull gerrit master:master\n
+scp -p ha:hooks/commit-msg .git/hooks/\n
+
+#-----------------git init
+git init\n
+git config color.ui true\n
+git config --global user.name "QinPan"\n
+git config --global user.email "qinpan1003@qq.com"\n
+
+scp -p ha:hooks/commit-msg .git/hooks/\n
+git remote add gerrit ha:test/project-qinpan.git\n
+git remote add github git@github.com:qinpan1003/linux_drv.git\n
+git pull github master:master\n
+
+#-----------------push to gerrit
+git push gerrit master:refs/for/master\n
+
+#-----------------gerrit to github
+mkdir -p /usr/__gerrit_to_github\n
+cd /isr/__gerrit_to_github\n
+
+git init\n
+git config color.ui true\n
+git config --global user.name "QinPan"\n
+git config --global user.email "qinpan1003@qq.com"\n
+
+scp -p ha:hooks/commit-msg .git/hooks/\n
+git remote add gerrit ha:test/project-qinpan.git\n
+git remote add github git@github.com:qinpan1003/linux_drv.git\n
+git pull gerrit master:master\n
+git push github master:master\n
