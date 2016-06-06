@@ -31,7 +31,7 @@ git push gerrit master:refs/for/master\n
 
 #-----------------gerrit to github
 mkdir -p /usr/__gerrit_to_github\n
-cd /isr/__gerrit_to_github\n
+cd /usr/__gerrit_to_github\n
 
 git init\n
 git config color.ui true\n
