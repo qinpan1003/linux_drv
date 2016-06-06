@@ -16,4 +16,7 @@ git-gerrit-github 联调成功
 	3、上传到gerrit进行评审
 	4、gerrit评审通过后合入
 	5、从gerrit上传到github
+	6、第一轮开发结束
+	------------------
+	7、下一轮开发循环1-5步，但是第1步从gerrit上更新本地分支（github仅用于备份）。
 	
