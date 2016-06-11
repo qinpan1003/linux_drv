@@ -1,0 +1,25 @@
+prio            : 0x00000002    tick            : 0x00000002
+delay           : 0x00000000
+t_ldt[0]  base  : 0x00000000    t_ldt[1]  base  : 0x00000000
+pdb  : 0x00000000  filp[0]        : 0x0001E3E0
+filp[1]        : 0x0001E3EC
+t_name          : proc_init
+gs        : 0x0000000B    fs        : 0x00000007    es        : 0x00000007
+ds        : 0x00000007    edi       : 0x00000000    esi       : 0x00000000
+ebp       : 0x0003CC8C    kernel_esp: 0x0001EE00    ebx       : 0x00000001
+edx       : 0x0003CCB4    ecx       : 0x00000005    eax       : 0x00000000
+eip       : 0x00011973    cs        : 0x0000000F    eflags    : 0x00000213
+esp       : 0x0003CC70    ss        : 0x00000007
+ldt_selector    : 0x00000080    pid             : 0x0000000B
+p_empty         : 0x00000000    t_stat          : 0x00000002
+has_int_msg     : 0x00000000    p_msg           : 0x0003CCB4
+sendto          : 0x00000003    recvfrom        : 0x00000005
+p_mymsg         : 0x4C1BAB54    p_nextsending   : 0x4C1BAB54
+prio            : 0x00000002    tick            : 0x00000002
+delay           : 0x00000000
+t_ldt[0]  base  : 0x00000000    t_ldt[1]  base  : 0x00000000
+pdb  : 0x00A00000  filp[0]        : 0x0001E428
+filp[1]        : 0x0001E464
+t_name          : proc_init    ß
+
+

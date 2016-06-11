@@ -1,0 +1,9 @@
+用法和标准printk相同
+目前实现的功能：
+%s 或 %S	：打印字符串
+%d 或 %D	：打印8位10进制数。左端是否用0补齐，在string.c里面的vsprintk中设置
+%x 或 %X	：打印8位16进制数。左端是否用0补齐，在string.c里面的vsprintk中设置
+%c 或 %C	：改变待打印tty的字符属性
+%t 或 %T	：待打印的tty。默认打印到tty_current，参数EVERY_TTY打印到所有tty，字符属性与tty_current相同
+
+覃攀	QQ:407802625	2013-11-21 09:01

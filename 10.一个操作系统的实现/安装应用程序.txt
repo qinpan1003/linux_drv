@@ -1,0 +1,35 @@
+Make File
+Make File1
+struct Gate size       :0x00000008
+struct Descriptor size :0x00000008
+123456789
+15#>Open device: 0x0000031A
+HD SN: BXHD00011
+HD Model: Generic 1234
+LBA supported: Yes
+LBA48 supported: Yes
+HD size: 10MB
+hd1 Primary Pation lba: 0x0000003F base: 0x00007E00 size: 0x001F0200
+hd2 Extern  Pation lba: 0x00000FC0 base: 0x001F8000 size: 0x007E0000
+hd26 Logic   Pation lba: 0x00000FFF base: 0x001FFE00 size: 0x001F0200
+hd27 Logic   Pation lba: 0x00001FBF base: 0x003F7E00 size: 0x001F0200
+hd28 Logic   Pation lba: 0x00002F7F base: 0x005EFE00 size: 0x001F0200
+hd29 Logic   Pation lba: 0x00003F3F base: 0x007E7E00 size: 0x001F0200
+super block  lba: 0x00000001,sects: 0x00000001
+i_node map   lba: 0x00000002,sects: 0x00000001
+sector map   lba: 0x00000003,sects: 0x00000001
+inode_array  lba: 0x00000004,sects: 0x00000002
+data_root    lba: 0x00000006,sects: 0x00000FA0
+new file cmd.tar  start_sect :2  sects: 200
+create file success: cmd.tar
+----------------------------------------------------------------------------------------------------
+制作压缩包
+tar vcf cmd.tar echo
+
+注：cmd.tar起始扇区号：
+		1、数据区中偏移	2
+		2、分区中偏移	6 + 2 = 8
+		3、硬盘中偏移	0xfff + 8 = 0x1007 = 4103
+		4、硬盘中绝对地址	0x1007 * 512 = 0x200e00
+将数据写入硬盘cmd.tar中		200是cmd.tar默认大小(扇区数),即：100KB
+dd if=cmd.tar of=c.img seek=4103 count=200 conv=notrunc

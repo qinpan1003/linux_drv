@@ -1,0 +1,424 @@
+Archive member included because of file (symbol)
+
+../../lib/mycrt.a(fs_user.o)  ../../lib/app_start.o (fopen)
+../../lib/mycrt.a(assert.o)   ../../lib/app_start.o (assertfail)
+../../lib/mycrt.a(sys_call_user.o)
+                              ../../lib/mycrt.a(fs_user.o) (sendrecv)
+../../lib/mycrt.a(mm_user.o)  ../../lib/start.o (exit)
+../../lib/mycrt.a(libs.o)     ../../lib/mycrt.a(assert.o) (disable_int)
+../../lib/mycrt.a(libc.o)     ../../lib/mycrt.a(mm_user.o) (delay10ms)
+../../lib/mycrt.a(string.o)   ../../lib/mycrt.a(fs_user.o) (strlen)
+../../lib/mycrt.a(stdio.o)    ../../lib/mycrt.a(assert.o) (printk)
+../../lib/mycrt.a(user_fun.o)
+                              ../../lib/mycrt.a(mm_user.o) (get_pid)
+
+Allocating common symbols
+Common symbol       size              file
+
+stdout              0x4               ../../lib/app_start.o
+stdin               0x4               ../../lib/app_start.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/app_start.o
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/mycrt.a(fs_user.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/mycrt.a(assert.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/mycrt.a(mm_user.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/mycrt.a(libc.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/mycrt.a(string.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/mycrt.a(stdio.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../lib/mycrt.a(user_fun.o)
+ .note.GNU-stack
+                0x00000000        0x0 mk.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0x110000
+LOAD ../../lib/start.o
+LOAD ../../lib/app_start.o
+LOAD ../../lib/mycrt.a
+LOAD mk.o
+                0x08048000                PROVIDE (__executable_start, 0x8048000)
+                0x08048094                . = (0x8048000 + SIZEOF_HEADERS)
+
+.interp
+ *(.interp)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x08048094        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x00000000        0x0 ../../lib/start.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.dyn
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.text           0x00110000     0x11d3
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00110000       0x29 ../../lib/start.o
+                0x00110000                _start
+ *fill*         0x00110029        0x3 90909090
+ .text          0x0011002c      0x12a ../../lib/app_start.o
+                0x0011002c                app_start
+                0x001100d9                app_exit
+ *fill*         0x00110156        0x2 90909090
+ .text          0x00110158      0x2de ../../lib/mycrt.a(fs_user.o)
+                0x00110313                fdelete
+                0x00110384                lseek
+                0x0011023d                fread
+                0x00110158                fopen
+                0x001103f2                strip_path
+                0x001102b1                fclose
+                0x001101c9                fwrite
+ *fill*         0x00110436        0x2 90909090
+ .text          0x00110438       0x2e ../../lib/mycrt.a(assert.o)
+                0x00110438                assertfail
+ *fill*         0x00110466        0xa 90909090
+ .text          0x00110470       0x38 ../../lib/mycrt.a(sys_call_user.o)
+                0x0011049c                set_pdb
+                0x00110470                sendrecv
+                0x00110490                waiting
+                0x00110484                do_write
+ .text          0x001104a8      0x22a ../../lib/mycrt.a(mm_user.o)
+                0x001105f6                exec
+                0x00110594                wait
+                0x00110664                file_page_copy
+                0x001104a8                fork
+                0x00110535                exit
+ *fill*         0x001106d2        0xe 90909090
+ .text          0x001106e0       0xea ../../lib/mycrt.a(libs.o)
+                0x00110788                out_dword
+                0x001106e0                ClrScr
+                0x001107a8                enable_int
+                0x0011076a                out_word
+                0x00110797                in_dword
+                0x001107b2                disable_int
+                0x001107a4                int_off_num
+                0x0011074e                out_byte
+                0x00110701                PrintS
+                0x001107ba                get_eflags
+                0x0011075d                in_byte
+                0x001107c2                sys_set_pdb
+                0x0011077a                in_word
+ *fill*         0x001107ca        0x2 90909090
+ .text          0x001107cc      0x2c9 ../../lib/mycrt.a(libc.o)
+                0x001107cc                delay10ms
+                0x001107df                delays
+                0x001107f5                print_proc_table
+ *fill*         0x00110a95        0x3 90909090
+ .text          0x00110a98      0x3c8 ../../lib/mycrt.a(string.o)
+                0x00110b34                memcopy
+                0x00110e01                va2pa
+                0x00110b04                mset
+                0x00110ac3                strcmp
+                0x00110b5d                vsprintk
+                0x00110a98                strlen
+ .text          0x00110e60       0x9f ../../lib/mycrt.a(stdio.o)
+                0x00110ea1                printf
+                0x00110e60                printk
+ *fill*         0x00110eff        0x1 90909090
+ .text          0x00110f00      0x23b ../../lib/mycrt.a(user_fun.o)
+                0x00111024                get_parent
+                0x001110dc                set_ppid
+                0x00110f5c                get_idle_count
+                0x00110fb8                out_char
+                0x00110f00                get_ticks
+                0x00111080                get_pid
+ *fill*         0x0011113b        0x1 90909090
+ .text          0x0011113c       0x97 mk.o
+                0x0011113c                main
+ *(.text.*personality*)
+ *(.gnu.warning)
+
+.fini
+ *(.fini)
+                0x001111d3                PROVIDE (__etext, .)
+                0x001111d3                PROVIDE (_etext, .)
+                0x001111d3                PROVIDE (etext, .)
+
+.rodata         0x001111d4      0x3f0
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x001111d4       0x28 ../../lib/app_start.o
+ .rodata        0x001111fc       0x35 ../../lib/mycrt.a(fs_user.o)
+ *fill*         0x00111231        0x3 00
+ .rodata        0x00111234       0x23 ../../lib/mycrt.a(assert.o)
+ *fill*         0x00111257        0x1 00
+ .rodata        0x00111258       0x35 ../../lib/mycrt.a(mm_user.o)
+ .rodata        0x0011128d      0x209 ../../lib/mycrt.a(libc.o)
+ *fill*         0x00111496        0x2 00
+ .rodata        0x00111498       0xd8 ../../lib/mycrt.a(string.o)
+ .rodata        0x00111570       0x32 ../../lib/mycrt.a(user_fun.o)
+ .rodata        0x001115a2       0x22 mk.o
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x001115c4                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x001125c4                . = (0x1000 DATA_SEGMENT_ALIGN 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x001125c4        0x0
+                0x001125c4                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x001125c4                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x001125c4        0x0
+                0x001125c4                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x001125c4                PROVIDE (__init_array_end, .)
+
+.fini_array     0x001125c4        0x0
+                0x001125c4                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x001125c4                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.got
+ *(.got)
+                0x001125c4                . = (. DATA_SEGMENT_RELRO_END 0xc)
+
+.got.plt
+ *(.got.plt)
+
+.data           0x001125c4        0x0
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x001125c4        0x0 ../../lib/app_start.o
+ .data          0x001125c4        0x0 ../../lib/mycrt.a(fs_user.o)
+ .data          0x001125c4        0x0 ../../lib/mycrt.a(assert.o)
+ .data          0x001125c4        0x0 ../../lib/mycrt.a(mm_user.o)
+ .data          0x001125c4        0x0 ../../lib/mycrt.a(libc.o)
+ .data          0x001125c4        0x0 ../../lib/mycrt.a(string.o)
+ .data          0x001125c4        0x0 ../../lib/mycrt.a(stdio.o)
+ .data          0x001125c4        0x0 ../../lib/mycrt.a(user_fun.o)
+ .data          0x001125c4        0x0 mk.o
+ *(.gnu.linkonce.d.*personality*)
+
+.data1
+ *(.data1)
+                0x001125c4                _edata = .
+                0x001125c4                PROVIDE (edata, .)
+                0x001125c4                __bss_start = .
+
+.bss            0x001125c4        0x8
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x001125c4        0x0 ../../lib/app_start.o
+ .bss           0x001125c4        0x0 ../../lib/mycrt.a(fs_user.o)
+ .bss           0x001125c4        0x0 ../../lib/mycrt.a(assert.o)
+ .bss           0x001125c4        0x0 ../../lib/mycrt.a(mm_user.o)
+ .bss           0x001125c4        0x0 ../../lib/mycrt.a(libc.o)
+ .bss           0x001125c4        0x0 ../../lib/mycrt.a(string.o)
+ .bss           0x001125c4        0x0 ../../lib/mycrt.a(stdio.o)
+ .bss           0x001125c4        0x0 ../../lib/mycrt.a(user_fun.o)
+ .bss           0x001125c4        0x0 mk.o
+ *(COMMON)
+ COMMON         0x001125c4        0x8 ../../lib/app_start.o
+                0x001125c4                stdout
+                0x001125c8                stdin
+                0x001125cc                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x001125cc                . = ALIGN (0x4)
+                0x001125cc                . = ALIGN (0x4)
+                0x001125cc                _end = .
+                0x001125cc                PROVIDE (end, .)
+                0x001125cc                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000      0x19e
+ *(.comment)
+ .comment       0x00000000       0x2e ../../lib/app_start.o
+ .comment       0x0000002e       0x2e ../../lib/mycrt.a(fs_user.o)
+ .comment       0x0000005c       0x2e ../../lib/mycrt.a(assert.o)
+ .comment       0x0000008a       0x2e ../../lib/mycrt.a(mm_user.o)
+ .comment       0x000000b8       0x2e ../../lib/mycrt.a(libc.o)
+ .comment       0x000000e6       0x2e ../../lib/mycrt.a(string.o)
+ .comment       0x00000114       0x2e ../../lib/mycrt.a(stdio.o)
+ .comment       0x00000142       0x2e ../../lib/mycrt.a(user_fun.o)
+ .comment       0x00000170       0x2e mk.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(mk elf32-i386)
